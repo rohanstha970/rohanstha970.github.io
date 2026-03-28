@@ -633,7 +633,11 @@
     /* MOBILE */
     @media (max-width: 768px) {
       html {
-        scroll-snap-type: y proximity;
+        scroll-snap-type: none;
+      }
+
+      section {
+        scroll-snap-align: none;
       }
 
       .glass-card {
@@ -641,8 +645,8 @@
         margin: 0 10px;
         max-height: 88vh;
         overflow-y: auto;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
         background: rgba(20, 20, 35, 0.88);
         box-shadow: none;
       }
@@ -665,8 +669,8 @@
         bottom: auto;
         transform: translateX(-50%) translateY(0);
         background: rgba(10, 10, 20, 0.95);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
         flex-wrap: nowrap;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -685,6 +689,10 @@
       .intro-subtitle {
         font-size: 0.7rem;
         letter-spacing: 2px;
+      }
+
+      .orb {
+        display: none;
       }
     }
   </style>
