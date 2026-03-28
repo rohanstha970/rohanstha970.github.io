@@ -662,8 +662,8 @@
       .footer-quote { font-size: 1.25rem; }
 
       .nav-float {
-        padding: 8px 10px;
-        gap: 2px;
+        padding: 6px 8px;
+        gap: 1px;
         max-width: 95%;
         top: 24px;
         bottom: auto;
@@ -671,16 +671,15 @@
         background: rgba(10, 10, 20, 0.95);
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       @keyframes navFadeIn {
         to { opacity: 1; transform: translateX(-50%) translateY(0); }
       }
 
-      .nav-link { padding: 7px 8px; font-size: 0.67rem; }
+      .nav-link { padding: 5px 6px; font-size: 0.6rem; }
       .cursor-glow { display: none; }
       .hero-name-container { flex-direction: column; gap: 0; }
       .footer-message { letter-spacing: 4px; font-size: 0.7rem; }
