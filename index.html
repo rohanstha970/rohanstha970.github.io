@@ -632,49 +632,78 @@
 
     /* MOBILE */
     @media (max-width: 768px) {
-      .glass-card {
-        padding: 36px 22px;
-        margin: 0 10px;
-        max-height: 88vh;
+
+      .nav-float {
+        top: 10px;
+        bottom: auto;
+        padding: 5px 8px;
+        gap: 1px;
+        max-width: 96vw;
+        border-radius: 100px;
+        background: rgba(10, 10, 20, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      @keyframes navFadeIn {
+        from { opacity: 0; transform: translate(-50%, -12px); }
+        to   { opacity: 1; transform: translate(-50%, 0); }
+      }
+
+      .nav-link {
+        padding: 6px 9px;
+        font-size: 0.62rem;
+        letter-spacing: 0;
+      }
+
+      section {
+        padding: 80px 12px 20px;
+        align-items: flex-start;
         overflow-y: auto;
+      }
+
+      .hero {
+        align-items: center;
+        padding-top: 80px;
+      }
+
+      .glass-card {
+        padding: 28px 18px;
+        margin: 0;
+        max-height: none;
+        width: 100%;
+        border-radius: 20px;
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         background: rgba(20, 20, 35, 0.88);
         box-shadow: none;
+        overflow: visible;
       }
 
+      #thoughts .glass-card { padding: 28px 18px; }
       .thoughts-grid { grid-template-columns: 1fr; }
       .thought-card.featured { grid-column: auto; }
-      #thoughts .glass-card { padding: 36px 22px; }
 
-      .hero-tagline { font-size: 1.25rem; }
-      .section-text { font-size: 1.05rem; }
+      .hero-tagline  { font-size: 1.15rem; }
+      .section-title { font-size: clamp(1.6rem, 7vw, 2.4rem); margin-bottom: 18px; }
+      .section-label { margin-bottom: 12px; }
+      .section-text  { font-size: 0.97rem; line-height: 1.75; }
+      .date-tag      { font-size: 0.72rem; }
+
       .contact-links { justify-content: center; }
-      .glow-btn { width: 100%; justify-content: center; }
-      .footer-quote { font-size: 1.25rem; }
+      .glow-btn { width: 100%; justify-content: center; padding: 13px 20px; }
 
-      .nav-float {
-        padding: 8px 10px;
-        gap: 2px;
-        max-width: 95%;
-        top: 24px;
-        bottom: auto;
-        transform: translateX(-50%) translateY(0);
-        background: rgba(10, 10, 20, 0.95);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border-radius: 0;
-      }
+      .footer-quote   { font-size: 1.1rem; }
+      .footer-message { letter-spacing: 3px; font-size: 0.65rem; }
 
-      @keyframes navFadeIn {
-        to { opacity: 1; transform: translateX(-50%) translateY(0); }
-      }
-
-      .nav-link { padding: 7px 8px; font-size: 0.67rem; }
-      .cursor-glow { display: none; }
       .hero-name-container { flex-direction: column; gap: 0; }
-      .footer-message { letter-spacing: 4px; font-size: 0.7rem; }
-      .hero-name { animation: none; }
+      .hero-name { animation: none; letter-spacing: -2px; }
+      .hero-subtitle { letter-spacing: 3px; font-size: 0.85rem; }
+      .hero-night-context { font-size: 0.82rem; }
+
+      .cursor-glow { display: none; }
     }
   </style>
 </head>
@@ -683,7 +712,7 @@
 
   <div class="intro-overlay" id="intro-overlay">
     <h1 class="intro-title">The Night Journey</h1>
-    <p class="intro-subtitle">Daily struggle. Daily growth. Continuous.</p>
+    <p class="intro-subtitle">Daily struggle. Daily growth. Daily record.</p>
   </div>
 
   <nav class="nav-float">
@@ -722,10 +751,11 @@
   <section id="foundation">
     <div class="glass-card fade-in">
       <span class="section-label">The Foundation</span>
-      <h2 class="section-title">Rising from the Roots</h2>
+      <h2 class="section-title">Building on Solid Ground</h2>
       <div class="date-tag">Grinding since February 14, 2026</div>
       <p class="section-text">
-        I began my journey in Computer Science (BSc. CSIT) in 2024 with a mindset fixed on the long game. On <strong>February 13, 2026</strong>, a simple thought: if I record my day, maybe I will actually do something with it(I just wanted to be productive). The next morning, February 14, I started posting on YouTube. Not because I had something big to show. Just to keep myself moving. I wanted to share the process, the struggle, the growth. I wanted to be honest about it. And that is how The Night Journey started. It is not a polished story. It is not a highlight reel. It is just me, trying to figure things out, day by day, and sharing it with others. 
+        I began my journey in Computer Science (BSc. CSIT) in 2024 with a mindset fixed on the long game. But something shifted on <strong>February 13, 2026</strong>, a simple thought: if I record my day, maybe I will actually do something with it. The next morning, February 14, I started posting on YouTube. Not because I had something big to show. Just to keep myself moving. No views, no audience yet. But I showed up. That matters more to me than the numbers right now.
+      </p>
     </div>
   </section>
 
@@ -735,7 +765,7 @@
       <span class="section-label">The Craft</span>
       <h2 class="section-title">Creating with Intent</h2>
       <p class="section-text">
-        Right now I am learning full-stack web development. But honestly, the bigger thing I am focused on is <strong>self improvement</strong>. Getting better as a person, as a thinker, as someone who follows through. The technical skills are part of that. I am trying to build good habits around how I learn, how I work, and how I carry myself. I am taking it step by step and not rushing. I know what I want to become. I just have to keep on going, keep on learning. That is the craft for me.
+        Right now I am learning full-stack web development. But honestly, the bigger thing I am focused on is <strong>self improvement</strong>. Getting better as a person, as a thinker, as someone who follows through. The technical skills are part of that. I am trying to build good habits around how I learn, how I work, and how I carry myself. I am taking it step by step and not rushing. I know what I want to become. I just have to keep building toward it, one day at a time.
       </p>
     </div>
   </section>
@@ -746,7 +776,7 @@
       <span class="section-label">The Vision</span>
       <h2 class="section-title">Evolution & Intelligence</h2>
       <p class="section-text">
-        I am studying computer science right now and my real interest is in <strong>AI and Data Science</strong>. That is where I want to go after graduation. I have a rough picture in my head of what I want to do with my life and the kind of person I want to become. It is bigger than just a job or a title. I am not ready to say all of it yet. But I know the map. And I am moving toward it, slowly and seriously.
+        I am studying computer science right now but my real interest is in <strong>AI and Data Science</strong>. That is where I want to go after graduation. I have a rough picture in my head of what I want to do with my life and the kind of person I want to become. It is bigger than just a job or a title. I am not ready to say all of it yet. But I know the direction. And I am moving toward it, slowly and seriously.
       </p>
     </div>
   </section>
@@ -755,7 +785,7 @@
   <section id="skills">
     <div class="glass-card fade-in">
       <span class="section-label">Capabilities</span>
-      <h2 class="section-title">Skills & Strengths</h2>
+      <h2 class="section-title">Chaos is My Playground</h2>
       <p class="section-text">
         I think a lot. Maybe too much sometimes. But over time I have started to understand how I think, what patterns I fall into, and where I tend to get stuck. I am trying to use that self awareness to actually improve instead of just thinking about improving. I am not the most disciplined person. I know that. But I am honest about it and I am working on it. I notice things quickly, I am not afraid to speak, and I care about doing the right thing. I still have a lot to prove, mostly to myself.
       </p>
@@ -768,7 +798,7 @@
       <span class="section-label">Beliefs</span>
       <h2 class="section-title">Faith & Respect</h2>
       <p class="section-text">
-        I believe in God. I am rooted in my Hindu faith. But I also thing we should believe strongly in ourself, our hard work, and the people around us. Faith without effort is just waiting. I think we have to show up for our own life. I respect every path people walk as long as they are genuine about it. I do not like beliefs that make people feel better than others from religious perspectives. My goal is simple: be humble, be honest, and treat all the people well. That is enough for me. I want to remember that when I am successful, when I have something to show, and when I have a platform. I want to use it to do good, to help others, and to be a positive influence in the world. That is the philosophy I am trying to live by.
+        I believe in God. I am rooted in my Hindu faith and that gives me a sense of peace and direction. But I also believe strongly in yourself, your hard work, and the people around you. Faith without effort is just waiting. I think you have to show up for your own life. I respect every path people walk as long as they are genuine about it. I do not like beliefs that make people feel better than others. My goal is simple: be useful, be honest, and treat people well. That is enough for me.
       </p>
     </div>
   </section>
@@ -778,7 +808,7 @@
     <div class="glass-card fade-in">
       <span class="section-label">Daily Thoughts</span>
       <h2 class="section-title">What's on My Mind</h2>
-      <p class="section-text" style="margin-bottom: 0;">Things I share on X — raw.</p>
+      <p class="section-text" style="margin-bottom: 0;">Things I share on X — raw, unpolished, real.</p>
 
       <div class="thoughts-grid">
         <div class="thought-card featured">
@@ -807,7 +837,7 @@
       <span class="section-label">Connect</span>
       <h2 class="section-title">Let's Talk</h2>
       <p class="section-text">
-        Whether you want to talk about anything, share a perspective, or just say hello, I am open to it. I post daily on YouTube documenting my progress, and I share thoughts on X every day. Feel free to reach out on any of those platforms or through the links below. I am always happy to connect with people who are on a similar journey or who just want to chat about life, growth, and everything in between.
+        Whether you want to talk about tech, share a perspective, or just say hello, I am open to it. I post daily on YouTube documenting my progress, and I share thoughts on X every day. If something here resonated with you, reach out.
       </p>
       <div class="contact-links">
         <!-- X / Twitter -->
@@ -847,7 +877,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-glow"></div>
-    <p class="footer-quote">"The journey of a thousand miles begins with a single step."</p>
+    <p class="footer-quote">"With discipline, patience, and consistency, the right people will find you."</p>
     <p class="footer-message">The Night Journey Continues</p>
     <div class="footer-stars">
       <span class="footer-star"></span>
@@ -856,7 +886,7 @@
       <span class="footer-star"></span>
       <span class="footer-star"></span>
     </div>
-    <p style="font-size: 0.7rem; color: rgba(255,255,255,0.25); margin-top: 2rem; letter-spacing: 0.1em; font-family: 'Syne', sans-serif;">Created on January 15, 2026</p>
+    <p style="font-size: 0.7rem; color: rgba(255,255,255,0.25); margin-top: 2rem; letter-spacing: 0.1em; font-family: 'Syne', sans-serif;">— Rohan Shrestha, @Rohanshrestha_0</p>
   </footer>
 
   <script>
